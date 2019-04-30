@@ -1,2 +1,3 @@
-const test: string = "world!";
-console.log(`Hello ${test}`);
+export const echo = (message: string): string => {
+  return message;
+};
