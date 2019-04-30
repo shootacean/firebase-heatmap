@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  background-color: black;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  height: 50px;
+}
+
+section {
+  height: 500px;
+}
+
+section:first-child {
+  background-color: antiquewhite;
+}
+
+section:nth-child(2) {
+  background-color: aliceblue;
+}
+
+section:nth-child(3) {
+  background-color: aquamarine;
+}
+
+section:last-child {
+  background-color: beige;
+}
