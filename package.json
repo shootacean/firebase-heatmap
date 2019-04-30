@@ -1,0 +1,16 @@
+{
+  "name": "firebase-heatmap",
+  "version": "0.0.1",
+  "description": "heatmap on firebase",
+  "main": "index.js",
+  "repository": "https://github.com/shootacean/firebase-heatmap",
+  "author": "Shootacean <shootacean@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}
