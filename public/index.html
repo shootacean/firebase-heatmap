@@ -9,10 +9,13 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<script src="lib/heatmap.min.js" async></script>
 <script src="js/index.js" async></script>
+<div id="heatmap" style="display: none"></div>
 <div id="app">
   <div class="menu">
     <button id="toggleTrackingButton">Stop Tracking</button>
+    <button id="toggleHeatmapButton">Show Heatmap</button>
   </div>
   <section>
     <h2>1</h2>
@@ -27,5 +30,28 @@
     <h2>4</h2>
   </section>
 </div>
+<script>
+  const heatmapButton = document.getElementById("toggleHeatmapButton");
+  heatmapButton.addEventListener("click", () => {
+    const heatmap = h337.create({
+      container: document.getElementById('app'),
+      maxOpacity: .5,
+      radius: 10,
+      blur: .75,
+      backgroundColor: 'rgba(0, 0, 0, 0.2)'
+    });
+    let dataList = [];
+    console.log('trackingCount', Object.keys(sessionStorage).length);
+    Object.keys(sessionStorage).forEach((v) => {
+      const data = JSON.parse(sessionStorage.getItem(v));
+      if (data.type !== 'MouseMove') {
+      // if (data.type !== 'MouseUp') {
+        return true;
+      }
+      dataList.push({x: data.x, y: data.y, value: 1});
+    });
+    heatmap.addData(dataList);
+  });
+</script>
 </body>
 </html>
